@@ -7,4 +7,4 @@ Usage
 -----
 
 Clone this repo, use app-engine SDK to deploy it.
-../sdk>appcfg.cmd --enable_jar_splitting update ../project/war
+`../sdk>appcfg.cmd --enable_jar_splitting update ../project/war`
