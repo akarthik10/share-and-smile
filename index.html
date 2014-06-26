@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Share and Smile</title>
+
+
+<meta property="og:title" content="Share and Smile"/>
+<meta property="og:image" content="http://img28.imageshack.us/img28/205/j1j0.jpg"/>
+<meta property="og:description" content="Share and Smile is a platform that enables users to share things and bring a smile on others' face"/>
+
+
+		<meta name="description" content="Share and Smile" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600|Niconne|Roboto:400" />
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-responsive.min.css" />
+		<link href="modal/modal.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="ladda/ladda-themeless.min.css" />
+		<link rel="stylesheet" href="assets/css/datepicker.css" />
+		<link href="growl/growl.css" rel="stylesheet" type="text/css" />
+		<link href="intro/introjs.min.css" rel="stylesheet" type="text/css" />
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script src="growl/jquery.growl.js" type="text/javascript"></script>
+		<script src="markerclusterer/markerclusterer.js"></script>
+		<script src="oms/oms.min.js"></script>
+		<script src="scrollto/jquery.scrollTo.min.js"></script>
+		<script src="scrollto/jquery.nav.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+		<script src="intro/intro.min.js"></script>
+
+<!--FB SDK-->
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=617325091648954";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!--/FB SDK -->
+
+
+<!--TWITTER-->
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<!--/TWITTER-->
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+	<body>
+		
+
+
+
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner" id="header-nav">
+				<div class="container-fluid container-fluid-nav">
+					<div href="#" class="brand brand-custom" >
+						Share &amp; Smile
+					</div>
+					<div class="tagline">Because sharing is happiness...</div>
+
+		<!--HP-NAV-->
+		
+
+
+        <div class="outer-nav">
+ 
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" id="bt-nav-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+ 
+      
+     <div class="nav-collapse collapse">
+                        <ul class="nav navbar-nav" id="top-nav">
+                            <li ><a href="#section-0">Home</a></li>
+                            <li><a href="#section-1">About</a></li>
+                            <li><a href="#section-2">Feedback</a></li>
+                            <li><a href="#section-3">Contact Us</a></li>
+                            <li><a href="#section-4">Comments</a></li>
+                            <!-- <li><a href="#section-4">Portfolio</a></li> -->
+                        </ul>
+	<!-- <button id="sbtn"><img src="https://developers.google.com/accounts/images/sign-in-with-google.png" alt="Sign In" width="250"/></button> -->
+	
+		 	<div class="signin-button">
+			<span
+            class="g-signin"
+            data-callback="handleLogin"
+            data-clientid="362163419531.apps.googleusercontent.com"
+            data-cookiepolicy="single_host_origin"
+            data-requestvisibleactions="http://schemas.google.com/AddActivity"
+            data-height="tall"
+            data-width="long"
+            data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/userinfo.email">
+          </span>
+          </div>
+	
+        </div>
+ 
+ </div>
+
+
+		<!--/HP-NAV-->
+
+
+			
+	
+
+	
+
+					<ul class="nav ace-nav pull-right" id="nav-bar">
+
+						<li class="">
+							<a href="#" onclick="restoreInnerPage(); return false;">Home</a>
+						</li>
+						<li class="">
+							<a href="#" id="event-create-link">Create an Event</a>
+						</li>
+
+						<li class="">
+							<a href="#" id="help-link" onclick="showHelp(); return false;">Help</a>
+						</li>
+
+
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" id="user-area" class="dropdown-toggle">
+								<img class="nav-user-photo" id="user-dp" src="" alt="DP"/>
+								<span class="user-info">
+									<small id="greeter">Hi,</small>
+									<span id="user-name">User</span>
+								</span>
+
+								<i class="icon-caret-down"><img src="images/caret-down-light.png" /></i>
+							</a>
+
+							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer" id="user-area-dropdown">
+								<li>
+									<a href="#" id="settings-button">
+										<i class="icon-i-cog"><img src="images/cog.png" /></i>
+										Settings
+									</a>
+								</li>
+
+								<li>
+									<a href="#" id="events-button">
+										<i class="icon-i-user"><img src="images/user.png" /></i>
+										My Events
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="#" id="logout-button">
+										<i class="icon-i-off"><img src="images/power-off.png" /></i>
+										Logout
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!--NAVBAR-END-->
+
+		<div class="main-container container-fluid a-page"  id="inner-page" style="height:100%; display: none;">
+			<div class="menu-toggler" id="menu-toggler" href="#">
+			Category: All &nbsp; &nbsp;
+				<i class="icon-caret-down"><img src="images/caret-down-light.png" /></i>
+			</div>
+			<!--Sidebar-Begins-->
+			<div class="sidebar" id="sidebar">
+			<div class="widget-box">
+			<div class="widget-header widget-header-flat" id="categories-header">
+				<h4>Categories</h4>
+			</div>
+			
+
+	<div class="widget-body">
+		<div class="widget-main">
+							<!--UL-->
+			<ul class="nav nav-list" id="cat-list">
+					<li>
+						<a href="#">
+							<!-- <i class="icon-dashboard"></i> -->
+							<img src="images/food.png" />
+							<span class="menu-text"> Dashboard </span>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<i class="icon-text-width"></i>
+							<span class="menu-text"> Typography </span>
+						</a>
+					</li>
+
+				</ul>
+
+				<!--/UL-->
+		</div>
+	</div>
+
+
+			</div><!--/WIDGETBOX-->
+			</div>
+				<!--Sidebar-Ends-->
+				
+
+
+				
+				
+			
+			
+
+			<!--Page-Content-->
+			<div class="main-content">
+
+				<!--Search-Bar-->
+				
+				<div class="breadcrumbs" id="breadcrumbs">
+					
+					<div class="annote" id="annote"></div>
+
+					<div id="eq" style="width: 200px; position: absolute; z-index: 1500;"><div class="help-block" id="input-span-slider"></div></div>
+
+					<div class="nav-search" id="nav-search">
+						<form class="form-search" />
+							<span class="input-icon">
+								<input type="text" placeholder="Search ..." class="input-small nav-search-input" id="nav-search-input" autocomplete="off" x-webkit-speech />
+								<i class="icon-i-search navi-search-icon"><img src="images/search.png" /></i>
+							</span>
+						</form>
+					</div><!--#nav-search-->
+				</div>
+				
+				<!--/Search-bar-->
+			<div class="page-content" id="i-page">
+					
+					<div class="row-fluid"   style="height:100%;">
+						<div class="span8"   style="height:100%;">
+							
+						<div class="widget-box"   style="height:100%;">
+							<div class="widget-header-flat widget-header">
+								<h4>Map - Showing all events of selected category</h4>
+							</div>
+							<div class="widget-body" id="map-canvasa" style="height: 93%;">
+								
+								<div class="map-spinner-holder">
+									<div class="spinner" id="map-spinner" style="margin: 0px auto;"></div>
+									<div class="map-spinner-helper"></div>
+								</div>
+								<div id="map-canvas" style="width: 100%; height: 100%;"></div>
+							</div>
+						</div>
+							
+							
+						</div><!--/.span-->
+						<div class="span4" style="height: 100%;">
+
+							<!--<div class="widget-box" style="height: 15%; margin-bottom: 10px;">
+							<div class="widget-header-flat widget-header">
+								<h4>Set Distance</h4>
+							</div>
+							<div class="widget-body" style="height:60%;">
+								
+							</div>
+							</div>-->
+							
+
+							<div class="widget-box" style="height: 100%;" id="list-box">
+							<div class="widget-header-flat widget-header">
+								<h4>Events within</h4><input type="text" id="kms" size="4"/><h4 id="kms-unit"> Kms</h4>
+							</div>
+							<div class="widget-body event-list" style="height: 91%;">
+							
+								<div class="event-spinner-holder">
+									<div class="spinner" id="event-spinner"></div>
+									<div class="event-spinner-helper"></div>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div><!--/.row-fluid-->
+				
+				</div><!--/.page-content-->
+			</div>
+			
+			<!--/Page-Content-->
+
+
+		</div>
+
+		<!--Home-Page-->
+
+		<div class="main-container container-fluid a-page" id="outer-page">
+			<div class="page-content">
+				<div class="row-fluid">
+					
+
+					  <!-- <div class="container"> -->
+						<div class="row-fluid">
+							<div class="span12" id="section-0">
+								<div class="like-buttons">
+								<div class="g-follow"  style="float:right" data-annotation="bubble" data-height="24" data-href="https://plus.google.com/116858946246822167431" data-rel="publisher" style="float: right; margin-right: 40px;"></div>
+
+								<div class="g-plusone" style="float:right" size="standard" data-href="http://gcdc2013-shareandsmile.appspot.com"></div>
+								<div class="fb-like" data-href="https://www.facebook.com/shareandsmile.india" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+								</div>
+								
+								<h2 class="page-header">
+									How this works?
+								</h2>
+								<iframe width="640" align="middle" height="360" src="//www.youtube.com/embed/1XfhWhWMBXc?wmode=transparent&theme=light" frameborder="0" style="display:block; margin: 0px auto; position: relative;" allowfullscreen></iframe>
+								<h4>Share something and bring a Smile!&nbsp;&nbsp;&nbsp;Sign-in to get started and start bringing smiles.</h4>
+								
+								<p class="home-content">
+									Have you ever wondered how your junk can help someone in need of it? Say, you have a bunch of useless gadgets or books. Instead of throwing it in trash, you could give it to someone who is in need of it. If you run a hotel, you can give your left-over food to the nearest orphanage instead of wasting it. The result? Smiles in many faces.
+
+								</p>
+							</div>
+							<hr>
+						</div>
+						<div class="separator">
+							
+						</div>
+						<div class="row-fluid">
+							<div class="span12" id="section-1">
+								<h2 class="page-header">
+									About
+								</h2>
+								<p class="home-qa">
+									Share and Smile is a platform for users to share things. It allows users to post "events" or give-aways which other users can utilize. Not just things, you also share a smile.</p>
+								</p>
+								<h4>How can I contribute?</h4>
+								<p class="home-qa">You have to login using your Google account, and on the first time you will be asked to provide your location. Once your location is registered, you can see all the events that other people near your place have created. An "event" is an instance where a person is ready to give away something. You can also provide an optional video describing your event while creating it. Interested people will contact you, and you can share your stuff and have a smile.</p>
+								<br />
+								<h4>How can I accept a give-away?</h4>
+								<p class="home-qa">You can search for a particular item either using the map by selecting nearest markers, or you can filter events based on their category, like food, books, electronics and so on. After you select a category, only the events belonging to that category are shown on the map and the list.</p>
+								<br />
+								<h4>What if I don't have access to internet?</h4>
+								<p class="home-qa">Share and Smile also supports SMS interface which you can use to interact with this application. Once you link your mobile number with your account, you can get customized messages according to your profile settings.</p>
+							</div>
+						</div>
+           				<div class="separator">
+           					
+           				</div>
+						<div class="row-fluid">
+							<div class="span12" id="section-2">
+								<h2 class="page-header">
+									What our users say about Share and Smile
+								</h2>
+								<blockquote>
+									<p>A new idea for a good cause. Hope this brings Smiles on many faces. Good luck!</p>
+									<small>Bharath Gowda, Software Developer</small>
+								</blockquote>
+								<blockquote>
+									<p>Now sharing something is easy and it is easily useable</p>
+									<small>Manjula Gopinath, Government Employee</small>
+								</blockquote>
+								<button class="btn btn-primary" onclick="window.open('https://docs.google.com/forms/d/1U4S3b1LD-k5ezpMtRFhUrO2CZUFCdttcqTstCIwMxFg/viewform');">Give your feedback</button>
+							</div>
+						</div>
+							<div class="separator">
+							</div>
+
+							<div class="row-fluid">
+								<div class="span12" id="section-3">
+									<h2 class="page-header">
+										Contact Us
+									</h2>
+									<p class="home-content">
+									<ul>
+										<li><a href="https://plus.google.com/100897659453221053462/posts" target="_blank">Karthik A </a></li>
+										<li><a href="https://plus.google.com/+VijayKumarGC/posts" target="_blank">Vijay Kumar GC</a></li>
+									</ul>
+									</p>
+								</div>
+							</div>
+							<div class="separator">
+								
+							</div>
+							
+						<div class="row-fluid">
+							<div class="span12" id="section-4">
+								<h2 class="page-header">
+									Comments
+								</h2>
+								
+								<div class="g-comments"
+								    data-href="http://gcdc2013-shareandsmile.appspot.com"
+								    data-width="642"
+								    data-height="1000"
+								    data-first_party_property="BLOGGER"
+								    data-view_type="FILTERED_POSTMOD">
+								</div>
+							</div>
+						</div>
+
+           
+    
+            
+            
+            
+            
+            
+
+            
+
+
+        				<!-- </div>/container -->
+				</div>
+
+			</div>
+		</div>
+	
+
+
+		<div class="main-container container-fluid a-page" id="event-page">
+			<div class="page-content" style="padding: 0px; height: 90%;">
+				<div class="row-fluid" style="height: 100%;">
+					<div class="span12" style="height: 100%">
+					<!-- <a style="font-size: 15px; margin-left: 20px; margin-bottom: 10px;" href="#" onclick="restoreInnerPage(); return false;">&lt;&lt; Back</a> -->
+					<img class="back-btn" src="http://smb.blob.core.windows.net/smbstaging/Content/themes/base/images/oc/arrowLeft.png" />
+
+						<h1 id="ed-main-title">Event Details</h1>
+					<!-- <button class="btn btn-info" onclick="restoreInnerPage();" style="margin-left: 30px; margin-bottom: 5px;"> &lt;&lt; Back</button> -->
+					<br />
+					<!-- <div class="span2" style="height: 100%; background: yellow;">
+						<h1>User Details</h1>
+					</div> -->
+					<div class="span7" style="float: left;">
+						<div class="row-fluid" style="">
+							<div class="widget-box"   style="">
+							<div class="widget-header-flat widget-header">
+								<h2 id="ed-title">Event Title</h2>
+								<!-- <div id="ed-status" class="event-open ed-closed">Status</div> -->
+							</div>
+							<div class="widget-body" style="">
+								<div class="widget-main" style=" padding: 10px;">
+									<div id="ed-category"></div>
+	
+									
+									<div id="ed-distance">Some Kms away</div><br />
+										<div class="row-fluid">
+									<div class="ed-address-holder span9">
+									<div class="ed-loc-pin span1">
+										<img src="http://www.clker.com/cliparts/1/H/H/w/u/R/map-pin-red-hi.png" height="50" />
+									</div>
+									<div id="ed-at" class="span10">Determining address at this location..</div>
+									</div>
+									<div class="span3" style="margin-bottom: -15px;">
+											<!--SHARE BUTTONS-->
+<div class="row-fluid">
+	<div class="span12">
+		<button
+  class="g-interactivepost gp-share"
+  id="gp-share-btn"
+  data-contenturl="http://gcdc2013-shareandsmile.appspot.com"
+  data-contentdeeplinkid="/events"
+  data-clientid="362163419531.apps.googleusercontent.com"
+  data-cookiepolicy="single_host_origin"
+  data-prefilltext="Hi, I just came across this giveaway and we can also share something to bring a smile."
+  data-calltoactionlabel="VISIT"
+  data-calltoactionurl="http://gcdc2013-shareandsmile.appspot.com"
+  data-calltoactiondeeplinkid="/index.html"
+  onclick="return false;">
+  <span class="icon">&nbsp;</span>
+  <span>Share on Google+</span>
+
+</button>
+	</div>
+</div>
+								
+<div class="row-fluid" style="margin-top: 10px;">
+	<div class="span12">
+		<div class="row-fluid">
+			<div class="span5">
+<div class="fb-share-button" id="fb-btn" data-href="http://gcdc2013-shareandsmile.appspot.com" data-width="500" data-type="button"></div>
+				
+			</div>
+			<div class="span5" id="twt-btn-holder">
+<a href="https://twitter.com/share" id="twt-btn" class="twitter-share-button" data-lang="en" data-url="http://gcdc2013-shareandsmile.appspot.com" data-via="ShareAndSmileIN" data-text="Hi,I just found a giveaway at Share and Smile. You can also share to bring a smile.">Tweet</a>
+				
+			</div>
+
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<button id="taf"
+  class="gp-share"
+  data-ename=""
+  onclick=" return false;"
+  data-cookiepolicy="single_host_origin">
+ 
+  <span>Tell a Friend</span>
+
+</button>
+			</div>
+		</div>
+		
+			
+		
+		
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+		
+	</div>
+</div>
+									
+
+
+									<!--/SHARE-BUTTONS-->
+									</div>
+
+								</div>
+
+									
+
+									<div class="row-fluid">
+										<div class="span12">
+											<div class="widget-box" id="contact-box">
+												<div class="widget-header-flat widget-header">
+													<h4>Created by</h4>
+												</div>
+												<div class="widget-body">
+													<div class="widget-main">
+														<div class="row-fluid">
+															<div class="span3" id="uc-image">
+
+															</div>
+															<div class="span9" id="uc-details">
+																<div class="row-fluid">
+																	<div class="span12">
+																		<div class="span6">
+																			<div class="ed-user">Loading user info..</div>
+																<button class="btn btn-danger" id="uc-view-profile">View Profile</button>
+																		</div>
+																		<div class="span6" id="uc-buttons">
+																			<button id="uc-mail-btn" class="gp-share"><img src="http://ausdroid.net/wp-content/uploads/2012/10/Gmail-Icon.png" alt="" width="40" />
+																			Mail this user</button><br />
+																			<button id="ed-call" class="gp-share"><img src="https://cdn1.iconfinder.com/data/icons/prettyoffice/256/contact.png" alt="" width="30" /><span id="uc-num">7760662670</span></button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="span3">
+											
+
+										</div>
+								
+
+									</div>
+
+									
+								
+									
+									<div class="row-fluid">
+										<div class="span12">
+											<div class="widget-box" id="description-box">
+												<div class="widget-header widget-header-flat">
+													<h4>Description</h4>
+												</div>
+												<div class="widget-body">
+													<div class="widget-main desc-body">
+														<div class="row-fluid">
+															<div class="span4" id="det-img">
+																<!-- <img src="http://www.elite-dining.co.uk/sites/default/files/O-food-photos-overview-16.jpg" alt="" /> -->
+															</div>
+															<div class="span7" id="desc-yt-holder">
+																<div class="row-fluid">
+																	<div class="span12" id="ed-desc-text">
+																		Loading description..
+																	</div>
+																</div>
+																
+																	<div class="yt-detail">
+																		<button class="btn btn-danger" id="yt-btn" onclick="ytPopup($(this).data('yt-link'));">
+																			Watch Youtube Video
+																		</button>
+																	</div>	
+																	
+															</div>
+														</div>														
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row-fluid">
+
+										<div class="span12" id="ed-video-holder">
+											<div class="widget-box">
+												<div class="widget-header widget-header-flat">
+													<h4>Comments</h4>
+												</div>
+												<div class="widget-body">
+													<div class="widget-main" id="ed-video-inner">
+														<div class="row-fluid">
+															<div class="span12" style="text-align: center;">
+																<!-- <iframe src="//www.youtube.com/embed/pWoo4xv-qoA?rel=0&theme=light&modestbranding=1&wmode=transparent&showinfo=0" frameborder="0"></iframe> -->
+
+																<!--COMMENTS-->
+																<div class="row-fluid">
+																<div class="span12" id="comment-holder">
+																	<div id="comments"></div>
+																</div>
+																</div>
+																<!--/COMMENTS-->
+
+															</div>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									
+
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+					<div class="span4" style=" float: left; ">
+						<div class="row-fluid" style="">
+							<div class="widget-box"   style="">
+							<div class="widget-header-flat widget-header">
+								<h4>Reach this place</h4>
+							</div>
+							<div class="widget-body noborder" style="">
+								
+								
+								<div id="direction-canvas" style="width: 100%; height: 300px;"></div>
+								<div class="widget-main" id="dir-widget">
+									<div class="tabbable">
+										<ul class="nav nav-tabs" id="directionsTab">
+											<li class="tabtitle">
+												<a data-toggle="tab" id="public-tab" href="#public">
+													Public Transport
+												</a>
+											</li>
+
+											<li class="tabtitle active" id="deftab">
+												<a data-toggle="tab" id="drive-tab" href="#drive">
+													Drive
+												</a>
+											</li>
+
+											<li class="tabtitle">
+												<a data-toggle="tab" id="walk-tab" href="#walk">
+													Walk
+												</a>
+											</li>
+
+											
+										</ul>
+
+										<div class="tab-content noborder">
+											<div id="public" class="tab-pane in active directions-content">
+												
+											</div>
+
+											<div id="drive" class="tab-pane directions-content">
+												
+											</div>
+
+											<div id="walk" class="tab-pane directions-content">
+												
+											</div>
+
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+					
+			
+
+
+				</div><!-- -->
+				</div>
+
+
+		
+
+			</div>
+		</div>
+
+
+		<!--CREATE-EVNT-->
+		<div class="main-container container-fluid a-page" id="ec-page">
+			<div class="page-content">
+				<!-- <a href="#" onclick="restoreInnerPage();">Back</a> -->
+					<!-- <button class="btn btn-info" onclick="restoreInnerPage();" style=" margin-bottom: 5px;"> &lt;&lt; Back</button> -->
+					<img class="back-eve-btn" src="http://smb.blob.core.windows.net/smbstaging/Content/themes/base/images/oc/arrowLeft.png" />
+					<h1 class="ec-head">Create an event</h1>
+
+				<div class="row-fluid">
+					<div class="span12" style="margin-bottom: 15px;">
+						<div class="widget-box">
+							<div class="widget-header-flat widget-header">
+								<h4>I want to share/donate</h4>
+							</div>
+							<div class="widget-body">
+								<div class="widget-main">
+									<div class="row-fluid">
+										<div class="span7">
+											<div class="row-fluid" id="ec-form-holder">
+											<form action="" class="form-horizontal">
+												
+
+												<div class="control-group">
+													<label for="ec-category" class="control-label">Category</label>
+														<div class="controls">
+														<select id="ec-category">
+															<option value="food">Food</option>
+															<option value="books">Books</option>
+															<option value="clothing">Clothes</option>
+															<option value="newspapers">Newspapers</option>
+															<option value="furnitures">Furnitures</option>
+															<option value="household">Household Items</option>
+															<option value="electronics">Electronics</option>
+															<option value="others">Others</option>
+														</select>
+														</div>
+												</div>
+
+												<div class="control-group ec-field-holder" id="ec-title-holder">
+													<label for="ec-title" class="control-label">Event title</label>
+													<div class="controls">
+														<input type="text" id="ec-title" placeholder="Event title" />
+													</div>
+												</div>
+
+												<div class="control-group">
+													<label for="ec-desc" class="control-label">Event description</label>
+													<div class="controls">
+														<textarea class="limited" id="ec-desc" data-maxlength="50"></textarea>
+														<input x-webkit-speech id="mike"/>
+													</div>
+												</div>
+												<script>
+
+
+
+												var mike = document.getElementById('mike');
+												mike.onfocus = mike.blur;
+												mike.onwebkitspeechchange = function(e) {
+												    //console.log(e); // SpeechInputEvent
+												    //document.getElementById('ec-desc').value="";
+
+												    document.getElementById('ec-desc').value = document.getElementById('ec-desc').value+""+mike.value;  
+												    mike.value="";
+												};
+
+
+												</script>
+												
+												<div class="control-group">
+													<label for="ec-email" class="control-label">Email</label>
+													<div class="controls">
+														<input type="text" id="ec-email" disabled="disabled" />
+													</div>
+												</div>
+
+												<div class="control-group">
+													<label for="ec-phone" class="control-label">Phone</label>
+													<div class="controls">
+														<input type="text" id="ec-phone" placeholder="Phone number (Optional)" />
+														
+													</div>
+												</div>
+
+
+													
+													
+
+													<div class="control-group">
+														<label for="ec-date" class="control-label">Event Date</label>
+														<div class="controls">
+															<input class="date-picker" id="ec-date" type="text" data-date-format="dd-mm-yyyy" />
+															<span class="add-on">
+																<i class="icon-calendar"></i>
+															</span>
+														</div>
+													</div>
+
+
+													<div class="control-group">
+														<label for="ec-upload" class="control-label">Add an Image</label>
+														<div class="controls">
+															<button class="btn btn-primary" id="ec-upload">Upload</button>
+															<button class="btn btn-danger" id="ec-gdrive">Import from Google Drive</button>
+															<br /><br /><button class="btn btn-danger" id="ec-picasa">Import from Picasa or Google+ Albums</button>
+														</div>
+													</div>
+
+													<div class="control-group">
+														<label for="ec-video" class="control-label">Add a Youtube video</label>
+														<div class="controls" id="ec-video-buttons">
+															<button class="btn btn-inverse" id="ec-video">Import from Youtube</button>
+															<button class="btn btn-inverse" id="ec-video-search">Search on Youtube</button>
+														</div>
+														<div class="controls" id="ec-video-thumbnail">
+															<!-- <img src="https://ytimg.googleusercontent.com/vi/GbFYqB-Qy08/hqdefault.jpg" width="250"></div> -->
+														</div>
+													</div>
+												
+
+												
+											</form>
+										</div>	<!-- -->	
+										</div>	
+
+										<!--/SPAN8-->
+
+										<!--SPAN4-->
+										<div class="span4" id="ec-image-preview">
+											<div class="msg"><h3>No image set</h3></div>
+										</div>
+										<!--/SPAN4-->
+									
+										<div class="span11">
+											<div class="span3">
+  						<button class="ladda-button ladda-button-ec-submit btn btn-primary" data-color="blue" data-style="expand-right" onclick="ecSubmit();">Submit</button>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+								
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<div id="footer">
+      <div class="container">
+		 © Share and Smile 2014
+		 <span style="float: right"><a href="#" onclick="showPrivacy(); return false;">Privacy</a></span>
+		 <span style="float: right; margin-right: 10px;"><a href="https://docs.google.com/forms/d/1U4S3b1LD-k5ezpMtRFhUrO2CZUFCdttcqTstCIwMxFg/viewform" target="_blank">Feedback</a></span>
+      </div>
+    </div>
+
+		<!--/CREATE-EVNT-->
+
+		<div id="test-popup" class="white-popup mfp-with-anim mfp-hide">
+			<div class="widget-box" style="padding: 0px; margin: 0px;">
+				<div class="widget-header widget-header-flat">
+					<h4 class="bigger-lighter" id="mfp-title">Title</h4>
+				</div>
+				<div class="widget-body">
+					<div class="widget-main" style="padding: 15px;">
+						<div id="mfp-content"> Popup content</div><br />
+  						<div class="spinner" id="mfp-spinner"></div>
+  						<div style="float: right; position: relative; margin-top: -35px; padding-top: 7px; min-height: 50px; margin-bottom: 20px;" >
+  						<!--<button class="btn btn-primary" id="mfp-btn">Submit</button>-->
+  						<button class="ladda-button ladda-button-register btn btn-primary" data-color="blue" id="#mfp-btn" data-style="expand-right">Submit</button>
+  						</div>
+  						<br />
+					</div>
+				</div>
+			</div>
+ 	
+		</div>
+
+		<div id="settings-popup" class="white-popup mfp-with-anim mfp-hide">
+			<div class="widget-box" style="padding: 0px; margin: 0px;">
+				<div class="widget-header widget-header-flat">
+					<h4 class="bigger-lighter" id="mfp-title">User settings</h4>
+				</div>
+				<div class="widget-body">
+					<div class="widget-main" id="settings-holder" style="padding: 15px;">
+						
+						<div class="row-fluid">
+							<div class="span12">
+								Link your mobile for offline access:
+								<button class="button-red ladda-button" id="mlink" data-style="expand-right" data-color="red">Add phone</button>
+
+							</div>
+						</div>
+
+						<div class="row-fluid">
+							<div class="span12">
+								Change your location:
+								<button class="ladda-button button-red" id="relocate" data-style="expand-right" data-color="red">Change my location</button>
+
+							</div>
+						</div>
+						<div class="row-fluid">
+							<div class="span12">
+								Delete your account:
+								<button class="ladda-button button-red" id="delete-account" data-style="expand-right" data-color="red">Delete my account</button>
+								
+								
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+ 	
+		</div>
+
+
+		<div id="events-popup" class="white-popup mfp-with-anim mfp-hide">
+			<div class="widget-box" style="padding: 0px; margin: 0px;">
+				<div class="widget-header widget-header-flat">
+					<h4 class="bigger-lighter" id="mfp-title">My Events</h4>
+				</div>
+				<div class="widget-body" id="myeve-wb">
+					<div class="widget-main" style="padding: 15px;" id="myeve-holder">
+						
+					</div>
+				</div>
+			</div>
+ 	
+		</div>
+
+
+		<div id="minfo-popup" class="white-popup mfp-with-anim mfp-hide">
+			<div class="widget-box" style="padding: 0px; margin: 0px;">
+				<div class="widget-header widget-header-flat">
+					<h4 class="bigger-lighter" id="mfp-title">Link your phone</h4>
+				</div>
+				<div class="widget-body">
+					<div class="widget-main" id="minfo-holder" style="padding: 15px; padding-right: 25px;">
+						
+						<div class="row-fluid">
+						<h4>Please send an SMS with the message body <span class="sms-info">@shareandsmile.register <span id="mcode"></span></span> to the number <span class="sms-info">+91 9243342000 (Airtel and Vodafone) / 51115 (Idea and Tata Docomo)</span> to link your mobile number.</h4>
+							<div class="span12">
+								After registration, please use the following instructions to access Share and Smile from your phone. Send an SMS to the same number you used to register with the message body:
+								<ul>
+									<li>@shareandsmile for the nearest five events</li>
+									<li>@shareandsmile.food for nearest food events</li>
+									<li>@shareandsmile.books for nearest book events</li>
+									<li>@shareandsmile.clothing for nearest clothing events</li>
+									<li>@shareandsmile.newspapers for nearest newspapers events</li>
+									<li>@shareandsmile.furnitures for nearest furniture events</li>
+									<li>@shareandsmile.household for nearest household item events</li>
+									<li>@shareandsmile.electronics for nearest electronics events</li>
+									<li>@shareandsmile.others for nearest other events</li>
+									<li>@shareandsmile.about for information about Share and Smile</li>
+									<li>@shareandsmile.contact to contact us</li>
+								</ul>
+								<p>We currently support the Indian network operators Vodafone, Idea, Tata Docomo and Airtel.</p>
+
+							</div>							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+ 	
+		</div>
+
+
+
+
+		<div id="privacy-popup" class="white-popup mfp-with-anim mfp-hide">
+			<div class="widget-box" style="padding: 0px; margin: 0px;">
+				<div class="widget-header widget-header-flat">
+					<h4 class="bigger-lighter">Privacy policy</h4>
+				</div>
+				<div class="widget-body"  id="privacy-holder" style="padding: 15px;">
+					<div class="widget-main" style="padding: 15px;">
+						
+						<div class="row-fluid">
+						
+							<div class="span12">
+								
+								<p>
+									Your use of this application constitutes acceptance of this privacy policy and our application Terms of Use. We may change the privacy policy, Acceptable Use Policy and/or our application Terms of Use at any time by posting revisions to our application. Your continued usage after such changes are posted constitutes acceptance of each revised Privacy Policy and/or Terms of Use. We encourage you to familiarize yourself with both policies. Our application Terms of Use may found under a link at the main website location. If You do not agree to the terms and conditions of this Privacy Policy, Our Terms of Use or any revised policy, please exit this application immediately.
+								</p>
+								<h4>Privacy Statement</h4>
+								<p>We believe in protecting the privacy and confidentiality of personally identifiable information that refers or relates to our Website users ("You"). We explain what information we collect about you, how we use the information we collect, how we protect the security and confidentiality of such information, and what you should do if you have any questions or comments. Our commitment to you is clear: We do not sell, license or rent any personally identifiable information about you to any third party without your express consent and will take reasonable measures to protect the confidentiality of personally identifiable information you provide to us.</p>
+								<h4>What Information is Collected?</h4>
+								<p>
+									Our application may collect information in the form of cookies. A cookie is a small data file that is stored on your hard drive when you visit the application. A cookie file can contain information such as a user ID that identifies your computer to the website. Cookies can only identify you as a unique, but anonymous, user of the website unless you choose to submit personally identifiable information through the Website. We may use cookies as a mechanism for creating a user "session," identifying a unique user as he or she moves among pages of the Website. This could include the storage of computer identifying information such as your computer's internet protocol address or media access control address of your computer. Combined with website usage logging, We may track user website use patterns, such as whether You click on various links throughout the website. We use the cookie information to identify your computer in our database and to track the pages you visit on the Website. However, a cookie can't read data off your hard disk. Further, We cannot read cookies created by other websites, nor can other websites read cookies created by us. WE DO NOT store any personally identifiable information in a cookie, such as your name or contact information.At our website, We don't collect personally identifiable information about you unless you voluntarily provide it to us. If You choose to post feedback on the website or reach us by email, you may be asked to provide such information as your name, address, email address, telephone and fax number, business name, business address, e-mail address, telephone and fax number. You may also be asked certain questions about you and/or your business, which will help us to better meet your needs and respond to your inquiries regarding the website and/or our various services featured on the website. If You choose to provide personally identifiable information to us, you represent and warrant that all such information is true, accurate and complete, and in compliance with our website Terms of Use.You may terminate your account with us at any time, and we will cease sending you emails or messages promptly, but in any event, within the time period required by applicable law (currently 10 days).
+								</p>
+								<h4>General Use of This Website</h4>
+								<p>We continually seek to improve the quality of our Website and services so that We may better meet Your needs. As part of this process, the information We collect from our Website users and data regarding Your use of this Website is used in the following ways:By Us - We use personally identifiable information that You provide to Us (such as Your name, address, phone and fax numbers, email address and other similar types of information specific to You) to statistically analyze Website usage and to improve the Website and our product and service offerings. We may use Your email address, mailing address, phone or fax number to contact You regarding feedback that You may have provided or information that You actively requested from Us. Further, We may be required to disclose personally identifiable information by court or administrative order such as a law, regulation, search warrant, or subpoena. We may also provide third parties with aggregate information regarding users of the Website. For example, We might inform third parties regarding the number of unique users of our Website, the number of times a Website link was selected by users, and aggregate information on the types of the activities such users conducted while on Our Website. This aggregate information will contain nothing that can identify You, and will not contain any personally identifiable information that refers or relates to You. Notwithstanding the above, in the case where we merge, sell our business, or otherwise transfer operational control of our business to a new owner, whether we do so directly or indirectly, You hereby authorize Us to transfer your entire personal information to such purchaser, so long as such Purchaser agrees to abide by the terms of this policy.By Third Parties - We provide no personally identifiable information about You to any third party without Your express consent (which consent may be provided by you electronically, via a selection on a web form or in another manner). Further, without Your consent, no third party will contact You using personally identifiable information You gave to Us through the Website.Security for Personally Identifiable Information.We take the security of personally identifiable information very seriously. Our Website and database servers are hosted in a secured physical and network environment. Reasonable efforts are made to secure web servers, networks, host operating systems and databases against unauthorized access. Please remember that the security measures taken above are not foolproof; no website can guarantee that personally identifiable information will be protected in all situations. Therefore We can only state that We will make a reasonable effort to protect from unauthorized access the information that You provide, and that if we are notified of a breach, we will comply with applicable law, however, unless a statute provides You a right that cannot be waived, you specifically waive and covenant not to sue us for any data loss or breach of our system resulting in loss of personal information, and you agree to receive notice of any such event via electronic email.Updating Your Personal Information and Contacting Us.You can always contact Us in order to: (i) update the personally identifiable information You have provided; or (ii) direct Us to render inactive on our systems all personally identifiable information that refers or relates to You. We may be reached by email at akarthik101@gmail.com.</p>
+							</div>							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+ 	
+		</div>
+
+
+		<div id="help-popup" class="white-popup mfp-with-anim mfp-hide">
+			<div class="widget-box" style="padding: 0px; margin: 0px;">
+				<div class="widget-header widget-header-flat">
+					<h4 class="bigger-lighter">Help</h4>
+				</div>
+				<div class="widget-body"  id="help-holder" style="padding: 15px;">
+					<div class="widget-main" style="padding: 15px;">
+						
+						<div class="row-fluid">
+						
+							<div class="span12">
+								
+									<div class="tabbable">
+										<ul class="nav nav-tabs" id="ghelpTab">
+											<li class="active">
+												<a data-toggle="tab" id="g-help-tab" href="#g-help">
+													General
+												</a>
+											</li>
+
+											<li>
+												<a data-toggle="tab" id="m-help-tab" href="#m-help">
+													SMS Interface
+												</a>
+											</li>
+
+
+											
+										</ul>
+
+										<div class="tab-content noborder">
+											<div id="g-help" class="tab-pane in active">
+																				<h4>What's the "Home Page"?</h4>
+								<p>The page which is shown immediately after you have logged in successfully is the Home Page. It has a Category List on the left side, Map with event markers in the middle and Event List on the right side.</p> 
+								<h4>How does the Category List on the left side works?</h4>
+								<p>The category list acts as a filter and shows only events of the selected category on the map and on the event list</p>
+								<h4>What is an Event?</h4>
+								<p>An event is an instance where a user is ready to give-away something. If you have some old books and you want to share it, you have to create an event first.</p>
+								<h4>What after the event is completed successfully?</h4>
+								<p>You can manage your events by selecting the My Events link from your profile. You can delete the events once they have been completed.</p>
+								<h4>What is the Event List on the right side?</h4>
+								<p>The Event List lists the selected category events in the nearest-first order. Once you move your mouse over any list item, a quick snap of it is shown on the map.</p>
+								<h4>How do I view the details of an event?</h4>
+								<p>To view the details of an event, click on the map marker for that event, or select an event from the event list.</p>
+								<h4>How can I contact the event creator?</h4>
+								<p>The phone number of the event creator is shown in the call button if provided. Other means of contact include the email option or the Hangout option from their Google+ profile. </p>
+								<h4>How can I reach the event location?</h4>
+								<p>Use the directions panel on the right side of the event detail page which lists Public transport, driving or walking instructions to the place of interest.</p>
+								<h4>I need some clarifications about the event from the event creator</h4>
+								</p>Please use the comments section to discuss all the event related activities</p>
+								<h4>The map shows a circled number instead of marker</h4>
+								<p>To prevent the overcrowding of markers on the map, markers are clustered. Clicking on any cluster will reveal other markers within that cluster</p>
+								<h4>How can I change my location?</h4>
+								<p>Please use the Settings link from the profile dropdown to select the option change my location</p>
+								<h4>I have more questions</h4>
+								<p>Please contact us at shareandsmile.in (at) gmail.com so that we can assist you.</p>
+
+											</div>
+
+											<div id="m-help" class="tab-pane">
+												<p>You can use our SMS interface to interact and query all the details from Share and Smile just by sending SMS. This enables you to access your nearest events even when you don't have an internet connection.</p>
+												<p>The currently supported network operators in India are Airtel, Idea, Tata Docomo and Vodafone. <b>Tata Docomo</b> and <b>Idea</b> users may use the special number <b>51115</b> to send SMS, where as other operators may use <b>+91 9243342000</b> as the number which costs a local SMS.</p>
+												<h4>Getting started</h4>
+												<p>Use the settings link on the top right profile menu, and select the <b>Add Phone</b> button. This displays a registration code.</p>
+												<p>Use this to register your mobile number. Ex: If your code is <b>abcde</b> then send an SMS <b>@shareandsmile.register abcde</b> to the above said number. You will get an Authentication Successful message on success</p>
+												<h4>Getting nearest events</h4>
+												<p>Send an SMS <b>@shareandsmile</b> to get your nearest events. Your location information is taken automatically from your profile and the nearest five events are returned.</p>
+												<h4>Getting events by category</h4>
+												<p>Use <b>@shareandsmile.category</b> Ex: <b>@shareandsmile.books</b> to retrieve a list of only events of that category.</p>
+												<h4>Other commands</h4>
+												<p>You can use <b>@shareandsmile.about</b> for information about this application and <b>@shareandsmile.contact</b> to contact us</p>
+											</div>
+
+										</div>
+									</div>
+
+					</div>							
+				</div>
+						
+			</div>
+		</div>
+	</div>
+ 	
+			
+
+		</div>
+
+		<script src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+
+		<script>
+		$('.date-picker').datepicker().next().on("click", function(){
+					$(this).prev().focus();
+				});
+				
+		</script>
+		
+		<script type="text/javascript">// <![CDATA[
+$('#top-nav').onePageNav({
+         currentClass: 'active',
+         //changeHash: true,
+         scrollSpeed: 800,
+         scrollOffset: 110
+         });
+// ]]></script>
+	
+	<!--Scripts-->
+
+	
+
+
+	<!--<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>-->
+		<script src="assets/js/bootstrap.min.js"></script>
+		<!--<script src="assets/js/ace-elements.min.js"></script>-->
+		<!--<script src="assets/js/ace.min.js"></script>-->
+	
+	<!--/Scripts-->
+
+	<script type="text/javascript">
+	
+
+$("#logout-button").click(function(){
+	gapi.auth.signOut();
+	$(".outer-nav").show();
+	$("#user-area-dropdown").hide();
+	$(".a-page").hide(1000);
+	$("#nav-bar").hide(1000);
+	$("#outer-page").show(1000);
+	$(".container-fluid-nav").animate({height: "120px"}, 1000);
+	$(".brand").animate({fontSize: "55px"}, 1500);
+	//.animate({width:"100px"}, 100);
+	$("#user-name").text(" ");
+	$("#user-dp").attr("src", "");
+	$("#map-canvas").css("display", "none");
+	$(".map-spinner-holder").show(150);
+	relocated=false;
+	oms=null;
+	mc=null;
+	markers=[];
+	loggedIn=false;
+	pickerApiLoaded = false;
+    oauthToken=null;
+	bigHeader();
+});
+ 
+$("#settings-button").click(function(){
+	settingsPopup();
+});
+
+
+$("#events-button").click(function(){
+	eventsPopup();
+});
+	
+$("#event-create-link").click(function(){
+	
+	//window.location.href=location.href.replace(location.hash,"")+"#event-create";
+	$("#ec-form-holder input, #ec-desc").val("");
+	$("#ec-category").val("food");
+     $("#ec-image-preview").html("<h3>No Image set</h3>");
+
+    ecRemoveVideo();
+    ec_image="";
+    ec_video="";
+	$("#ec-email").val(global_profile.emails[0].value);
+	$(".a-page").fadeOut(200);
+		$("#ec-page").fadeIn(200);
+		return false;
+});
+
+	</script>
+
+	
+
+	<!--LADDA-->
+	
+	<script type="text/javascript" src="ladda/spin.min.js"></script>
+	<script type="text/javascript" src="ladda/ladda.min.js"></script>
+	<!--/LADDA-->
+
+	<script type="text/javascript" src="modal/modal.js">
+	</script>
+	
+	<script src="dotdot/dotdot.js"></script>
+	
+
+
+	<script type="text/javascript">
+	generateCategories();
+	//$(".ladda-button").text("Bund");
+	</script>
+
+	<script type="text/javascript">
+
+	/*before*/
+
+
+      // Scope to use to access user's photos.
+      var scope = ['https://www.googleapis.com/auth/photos','https://www.googleapis.com/auth/drive.readonly','https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/photos.upload', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/drive.file'];
+
+      var pickerApiLoaded = false;
+      var oauthToken;
+       var developerKey = 'AIzaSyD51LOjDGjwbjQkLWXy5OHArzYYiccyIDQ';
+       var service="PHOTO_UPLOAD";
+
+ function onApiLoad() {
+        gapi.load('auth', {'callback': onAuthApiLoad});
+        gapi.load('picker', {'callback': onPickerApiLoad});
+      }
+
+var clientId="362163419531.apps.googleusercontent.com";
+ function onAuthApiLoad() {
+ 	if(!oauthToken)
+        window.gapi.auth.authorize(
+            {
+              'client_id': clientId,
+              'scope': scope,
+              'immediate': false
+            },
+            handleAuthResult);
+      }
+
+
+      function onPickerApiLoad() {
+        pickerApiLoaded = true;
+        createPicker();
+      }
+
+         function handleAuthResult(authResult) {
+        if (authResult && !authResult.error) {
+          oauthToken = authResult.access_token;
+          createPicker();
+        }
+      }
+
+
+      function createPicker() {
+        if (pickerApiLoaded && oauthToken) {
+          var picker = new google.picker.PickerBuilder().
+              addView(google.picker.ViewId[service]).
+              setOAuthToken(oauthToken).
+              setDeveloperKey(developerKey).
+              setCallback(pickerCallback).
+              build();
+          picker.setVisible(true);
+        }
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*before*/
+	 $("#ec-upload").click(function(){
+	 	//imagePicker("PHOTO_UPLOAD");
+	 	service="PHOTO_UPLOAD";
+	 	onApiLoad();
+	 	return false;
+	 });
+
+	 $("#ec-gdrive").click(function(){
+	 	//imagePicker("DOCS_IMAGES");
+	 	service="DOCS_IMAGES";
+	 	onApiLoad();
+	 	return false;
+	 });
+
+	 $("#ec-picasa").click(function(){
+	 	//imagePicker("PHOTOS");
+	 	service="PHOTOS";
+	 	onApiLoad();
+	 	return false;
+	 });
+
+	 $("#ec-video").click(function(){
+	 	//imagePicker("YOUTUBE");
+	 	service="YOUTUBE";
+	 	onApiLoad();
+	 	return false;
+	 });
+
+	 $("#ec-video-search").click(function(){
+	 	//imagePicker("VIDEO_SEARCH");
+	 	service="VIDEO_SEARCH";
+	 	onApiLoad();
+	 	return false;
+	 });
+
+	 var ec_image="",ec_video="";
+
+
+	function imagePicker(m)
+	{
+		gapi.load("picker", "1", function(){
+			var picker = new google.picker.PickerBuilder().
+              addView(google.picker.ViewId[m]).
+              setOAuthToken(oauth_token).
+              setDeveloperKey("AIzaSyD51LOjDGjwbjQkLWXy5OHArzYYiccyIDQ").
+              setCallback(pickerCallback).
+              build();
+          picker.setVisible(true);
+		});
+		
+          
+	}
+
+	function pickerCallback(data) {
+        
+        var url = 'nothing';
+        var gd_id;
+        if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
+          var doc = data[google.picker.Response.DOCUMENTS][0];
+          console.log(doc);
+          if(doc.serviceId=="picasa")
+          {
+          	url = doc.thumbnails[doc.thumbnails.length-1].url;
+          	ec_image=url;
+          	var img = new Image();
+
+			$(img).load(function(){
+
+			  $('#ec-image-preview').html($(this)).hide().fadeIn(350);
+			$("#ec-image-preview").append('<a href="#" onclick="ecRemoveImage();">Remove this Image</a>');
+
+			}).attr({src: url}).error(function(){});
+
+
+			}
+			else if(doc.serviceId=="docs")
+			{
+				gd_id=doc.id;
+					gapi.client.load("drive", "v2", function(){
+
+							var request = gapi.client.drive.files.get({
+						    'fileId': doc.id
+						  });
+							
+						  request.execute(function(resp) {
+						    var t = resp.thumbnailLink.substring(0,resp.thumbnailLink.length-3)+"550";
+							ec_image=t;
+							var img = new Image();
+								//alert(t);
+								$(img).load(function(){
+
+								  $('#ec-image-preview').html($(this)).hide().fadeIn(350);
+			$("#ec-image-preview").append('<a href="#" onclick="ecRemoveImage();">Remove this Image</a>');
+
+								}).attr({src: t}).error(function(){});						    
+											  });
+										});
+				
+				
+
+			}
+			else if(doc.serviceId=="youtube" || doc.serviceId=="search-api")
+			{
+				var img = new Image();
+          	url = doc.thumbnails[doc.thumbnails.length-1].url;
+          	ec_video=doc.url;
+			$(img).load(function(){
+				$("#ec-video-buttons").fadeOut(200);
+
+			  $('#ec-video-thumbnail').html($(this)).hide().fadeIn(350);
+			  $("#ec-video-thumbnail").append('<br /><br /><a class="ec-remove-video" onclick="ecRemoveVideo();">Remove this video</a>');
+			}).attr({src: url, width: "220"}).error(function(){});
+				/*$(".ec-remove-video").unbind("click").click(function(){
+					
+				});*/
+			}
+          
+        }
+        //var message = 'You picked: ' + url;
+        //document.getElementById('result').innerHTML = message;
+      }
+
+
+      function ecRemoveVideo()
+      {
+      	$('#ec-video-thumbnail').fadeOut(200, function(){$('#ec-video-buttons').fadeIn(300);});	
+      	ec_video=null;
+      }
+
+      function ecRemoveImage()
+      {
+      	$("#ec-image-preview").fadeOut(200, function(){
+      		$("#ec-image-preview").html("<h3>No Image set</h3>").fadeIn(100);
+      	});
+      	ec_image=null;
+      }
+
+
+      function ecSubmit()
+      {
+      		var ec_title,ec_desc,ec_email,ec_phone,ec_date;
+      		var bgcolor="#E08783";
+      		if((ec_title=$("#ec-title").val())=="")
+      		{
+      			
+      			$("#ec-title-holder").css({backgroundColor: bgcolor});
+      			$.growl.error({title:"Warning!", message: "Please enter the title", duration: 1500});
+      			return;
+
+      		}
+
+      		if((ec_desc=$("#ec-desc").val())=="")
+      		{
+      			$("#ec-desc-holder").css({backgroundColor: bgcolor});
+      			$.growl.error({title:"Warning!", message: "Please enter the description", duration: 1500});
+      			return;
+      		}
+      		
+      		if((ec_date=$("#ec-date").val())=="")
+      		{
+      			$("#ec-date-holder").css({backgroundColor: bgcolor});
+      			$.growl.error({title:"Warning!", message: "Please enter the end date", duration: 1500});
+      			return;
+      		}
+
+      		ec_email=$("#ec-email").val();
+      		ec_phone=$("#ec-phone").val();
+      		
+      		// alert(ec_desc);
+      		Ladda.stopAll();
+      		var query=macro+"?action=createevent&user_id="+global_profile.id+"&lat="+global_profile.user_location.split(",")[0]+"&lng="+global_profile.user_location.split(",")[1]+"&title="+ec_title+"&desc="+ec_desc+"&timestamp="+new Date().getTime()+"&category="+$("#ec-category").val()+"&video="+ec_video+"&phone="+ec_phone+"&email="+ec_email+"&end_date="+ec_date+"&image="+ec_image+"&call=eventCreated&?callback=?";
+			$.getJSON(query);
+      	var l = Ladda.create( document.querySelector( '.ladda-button-ec-submit' ) );
+				l.start();
+      }
+
+      function eventCreated(data)
+      {
+      		var l = Ladda.create( document.querySelector( '.ladda-button-ec-submit' ) );
+				l.stop();
+				$.growl.notice({ message: "Event created succesfully!" });
+				populateUserData();
+				restoreInnerPage();
+      		console.log(data);
+      }
+
+
+
+      
+
+      
+
+      $("#user-area").click(function(e){
+      	$("#user-area-dropdown").slideToggle(100);
+      	e.stopPropagation(); 
+      		
+      });
+
+      $("#menu-toggler").click(function(e){
+      	$("#sidebar").slideToggle(100);
+      	e.stopPropagation();
+      });
+
+      $(document).click(function(){                   
+  			$("#user-area-dropdown").slideUp(100);
+  			if($(window).width()<980 && $("#sidebar").is(":visible"))
+  			$("#sidebar").slideUp(100);
+		});
+
+
+      $(window).bind('resize', function () { 
+
+    	if($(this).width()>979)
+    	{
+    		$("#sidebar").show();
+    	}
+    	else
+    		$("#sidebar").hide();
+
+	});
+
+
+
+
+
+	</script>
+
+<script>
+
+function renderButton()
+{
+	gapi.signin.render("sbtn", { 
+  'callback': handleLogin, 
+  'clientid': '362163419531.apps.googleusercontent.com', 
+  'cookiepolicy': 'single_host_origin', 
+  'requestvisibleactions': 'http://schemas.google.com/AddActivity',
+  'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/photos https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/photos.upload https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/drive.file'
+});
+}
+
+$("#kms").val(limit);
+$('#kms').keyup(function (e) { limit=$("#kms").val(); listEvents(eventObjects.array); $( ".event-list" ).effect( "highlight", {color:'skyblue'}, 300);});
+$("#nav-search-input").bind("input", function(){
+	
+	if(($("#nav-search-input").val().trim())!= "")
+	{
+		searchstr=$("#nav-search-input").val().trim();
+		listEvents(eventObjects.array);
+		if(searchstr!="")
+			$( ".event-list" ).effect( "highlight", {color:'skyblue'}, 300);
+		
+
+	}
+	else
+	{
+		searchstr="";
+		listEvents(eventObjects.array);
+	}
+});
+
+$("#mlink").unbind("click").click(function(){
+	linkPhone();
+});
+
+$("#relocate").unbind("click").click(function(){
+	relocateUser();
+});
+
+$("#delete-account").unbind("click").click(function(){
+	deleteAccount();
+});
+
+	</script>
+
+	<script type="text/javascript">
+    (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone:platform.js?';//onload=renderButton';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
+
+<script>
+    $(function(){
+  $('#header-nav').data('size','big');
+});
+
+$(window).scroll(function(){
+
+	if(!loggedIn)
+	{
+
+
+  if($(document).scrollTop() > 0)
+{
+    if($('#header-nav').data('size') == 'big')
+    {
+        smallheader();
+    }
+}
+else
+  {
+    if($('#header-nav').data('size') == 'small')
+      {
+        bigHeader();
+      }  
+  }
+}
+});
+
+
+function smallheader()
+{
+	$('#header-nav').data('size','small');
+        $('#header-nav').stop().animate({
+            height:'50px'
+        },600);
+        $(".brand").animate({fontSize:"28px"}, 600);
+        $("#top-nav").animate({marginTop:"5px"}, 600);
+        //$("#top-nav").animate({marginLeft:"50px"}, 100);
+
+        $(".signin-button").animate({paddingTop:"3px"}, 600);
+        $(".tagline").fadeOut(100);
+}
+
+function bigHeader()
+{
+	$('#header-nav').data('size','big');
+        $('#header-nav').stop().animate({
+            height:'120px'
+        },600, function(){
+        	$(".tagline").show(100);
+        });
+       // $("#top-nav").animate({marginLeft:"100px"}, 300);
+        $("#top-nav").animate({marginTop:"25px"}, 600);
+
+        $(".brand").animate({fontSize:"55px"});
+         $(".signin-button").animate({paddingTop:"25px"}, 600);
+         
+}
+var lasthash="#home";
+
+
+$(".back-btn, .back-eve-btn").click(function(){
+	restoreInnerPage();
+});
+
+
+$(".ec-field-holder input").on("focus", function(){
+	
+	$('#ec-form-holder .control-group').css({backgroundColor: "white"});
+});
+
+$(".brand").click(function(){
+	if(loggedIn)
+	{
+		restoreInnerPage();
+	}
+
+});
+
+
+var msgs=[];
+msgs[0]='Need help? Please take a look at our <a href="#" onclick="showHelp(); return false;">help menu</a>';
+msgs[1]='Now access Share and Smile without Internet! <a href="#" onclick="settingsPopup(); return false;">Link your phone</a> to get offline access.';
+msgs[2]='To view the various SMS commands, open the <a href="#" onclick="showHelp(); return false;">help menu</a>';
+msgs[3]="To view events within a certain distance, use the distance filter on the top of the events list in the right side of the window.";
+msgs[4]="Placing your mouse cursor on the event list item will show a quick preview of that event on the map";
+msgs[5]="Do you know that Share and Smile is powered by a Spreadsheet that resides on Google Drive?";
+msgs[6]="To search for an event with a keyword/category, use the search bar on the top right.";
+msgs[7]="Create a new event by using the Create An Event link on the top right corner."
+msgs[8]="Share and Smile can now import Google Drive/Picasa/Google+ images as an attachment to an event."
+msgs[9]="Share and Smile can now import your YouTube videos as an attachment to an event."
+msgs[10]='You can always change your location from the <a href="#" onclick="settingsPopup(); return false;">settings</a> menu.';
+msgs[11]='Manage your events by using the <a href="#" onclick="eventsPopup(); return false;">My Events</a> menu';
+
+var ms=0;
+var annoteset=false;
+function changeAnnote()
+{
+$("#annote").fadeOut(200, function(){
+	$("#annote").html(msgs[ms]);
+	$("#annote").fadeIn(200);
+	ms=(ms+1)%msgs.length;
+	annoteset=true;
+		setTimeout(function(){
+		
+		changeAnnote();
+	}, 10000);
+	
+	
+});
+
+}
+
+
+
+
+
+   
+   		
+   
+
+
+
+</script>
+
+
+
+
+
+
+
+	</body>
+
+
+
+</html>
